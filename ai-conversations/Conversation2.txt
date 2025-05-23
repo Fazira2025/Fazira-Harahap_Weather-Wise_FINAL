@@ -1,0 +1,494 @@
+-------------
+chatbot : meta ai
+-------------
+
+DATE- 08/05/2025
+****EXPLANATIONS ABOUT MENU USING PRINT() FUNCTION****
+
+ME: Hi there. So, actually, I have to make a weatherwise assignment through programming - coding. Now I want to make a menu in the main functions. I have gathered an example here, but can you please make it simple and understandable? def display_menu(): print("Weatherwise Assignment Menu") print("1. Check current weather") print("2. View weather forecast") print("3. Exit") def main(): while True: display_menu() choice = input("Please enter your choice (1-3): ") if choice == '1': print("You chose to check the current weather.") # You can add your weather-checking code here elif choice == '2': print("You chose to view the weather forecast.") # Add your forecast code here elif choice == '3': print("Exiting the program.") break else: print("Invalid choice, please try again.") if __name__ == "__main__": main()
+
+AI: 
+Here's a simplified version of your code with some minor improvements for readability:
+Python
+def display_menu():
+    print("\nWeatherwise Assignment Menu")
+    print("1. Current Weather")
+    print("2. Weather Forecast")
+    print("3. Exit")
+
+def get_user_choice():
+    while True:
+        choice = input("Enter your choice (1-3): ")
+        if choice in ['1', '2', '3']:
+            return choice
+        print("Invalid choice, try again.")
+
+def main():
+    while True:
+        display_menu()
+        choice = get_user_choice()
+
+        if choice == '1':
+            print("Checking current weather...")
+            # Add current weather code here
+        elif choice == '2':
+            print("Viewing weather forecast...")
+            # Add forecast code here
+        elif choice == '3':
+            print("Exiting program.")
+            break
+
+if __name__ == "__main__":
+    main()
+I made the following changes:
+•	Extracted the user input logic into a separate function get_user_choice() to make the code more modular.
+•	Added a newline character (\n) before the menu title to separate it from any previous output.
+•	Removed unnecessary comments and shortened the menu options.
+•	Used a more concise way to check for valid user input in get_user_choice().
+You can now add your weather-checking and forecast code where indicated.
+
+
+ME: Hey, I have made it simpler. How's this? def main(): print('Your Choice (1 - 4) : ') print(f'1. Choice 1') print(f'2. Choice 2') print(f'3. Choice 3') print(f'4. Choice 4') if choice == "1": print('Choice 1') elif choice == "2": print('Choice 2') elif choice == "3": print('Choice 3') elif choice == "4": print('Choice 4') if __name__ == "__main__": main()
+
+AI: 
+Your code is simpler, but there are a couple of issues:
+•	You're printing the menu options, but you're not actually getting the user's choice. You need to add choice = input() to get the user's input.
+•	You're missing an else clause to handle invalid choices.
+Here's an updated version of your code:
+Python
+def main():
+    print('Your Menu:')
+    print('1. Choice 1')
+    print('2. Choice 2')
+    print('3. Choice 3')
+    print('4. Choice 4')
+
+    choice = input('Enter your choice (1-4): ')
+
+    if choice == "1":
+        print('You chose Choice 1')
+    elif choice == "2":
+        print('You chose Choice 2')
+    elif choice == "3":
+        print('You chose Choice 3')
+    elif choice == "4":
+        print('You chose Choice 4')
+    else:
+        print('Invalid choice')
+
+if __name__ == "__main__":
+    main()
+If you want the menu to repeat until the user decides to exit, you can add a while loop:
+Python
+def main():
+    while True:
+        print('\nYour Menu:')
+        print('1. Choice 1')
+        print('2. Choice 2')
+        print('3. Choice 3')
+        print('4. Exit')
+
+        choice = input('Enter your choice (1-4): ')
+
+        if choice == "1":
+            print('You chose Choice 1')
+        elif choice == "2":
+            print('You chose Choice 2')
+        elif choice == "3":
+            print('You chose Choice 3')
+        elif choice == "4":
+            print('Exiting...')
+            break
+        else:
+            print('Invalid choice')
+
+if __name__ == "__main__":
+    main()
+
+
+ME: I want to add an emoticon to the menu. How do I do it in Python?
+AI: You can add an emoticon to your menu in Python by simply including it in your print statement. Here's an example:
+Python
+def main():
+    while True:
+        print('\nYour Menu 😊:')
+        print('1. Choice 1 🌞')
+        print('2. Choice 2 🌈')
+        print('3. Choice 3 🤔')
+        print('4. Exit 👋')
+
+        choice = input('Enter your choice (1-4): ')
+
+        if choice == "1":
+            print('You chose Choice 1')
+        elif choice == "2":
+            print('You chose Choice 2')
+        elif choice == "3":
+            print('You chose Choice 3')
+        elif choice == "4":
+            print('Exiting... 👋')
+            break
+        else:
+            print('Invalid choice 😕')
+
+if __name__ == "__main__":
+    main()
+
+print("Hello, this is the first part of the sentence.\nAnd this is the second part.")
+
+
+ME: How to make this function print('Invalid choice. Please type 1-4 as a number') bold and italic?
+
+AI: You can use ANSI escape codes to print text in bold and italic. Here's how you can do it:
+Python
+print("\033[1;3mInvalid choice. Please type 1-4 as a number\033[0m")
+Here's what the codes mean:
+•	\033[ is the escape sequence
+•	1 means bold
+•	3 means italic
+•	m is the end of the escape sequence
+•	\033[0m resets the text to normal
+Note that this will only work in terminals that support ANSI escape codes.
+
+
+ME: 7.	Me: Hi, I have this function. But I just want the Title "weather wise" that has blue color, not the = sign. Can you please make the functions? if __name__ == "__main__": title = "Weather Wise" blue_bold = "\033[1;94m" # 1 for bold, 94 for light blue color = "\033[0m" print("=" * 53) print(blue_bold + title.center(53, "=") + color) print("=" * 53) main()
+
+AI: You can achieve this by printing the "=" signs separately from the title. Here's how you can do it:
+Python
+if __name__ == "__main__":
+    title = "Weather Wise"
+    blue_bold = "\033[1;94m"  # 1 for bold, 94 for light blue
+    color = "\033[0m"
+
+    print("=" * 53)
+    print("=" + blue_bold + title.center(51) + color + "=")
+    print("=" * 53)
+
+    main()
+
+
+DATE- 08/05/2025
+
+Me : hi meta
+i've some standard code, please make it clear
+1. create visualisasi like this
+  ==============================
+                  weather wise (the blue color)
+  ==============================
+
+from this code
+def main():
+    print("Welcome to the Weather Dashboard!\n")
+
+    # Get user's name without validation
+    name = input("Please enter your name: ").strip()
+
+    # Get user's location without validation
+    location = input("Please enter your location (city name): ").strip()
+
+    print(f"\nHello, {name}! Your location is set to: {location}\n")
+
+    while True:
+        print("Main Menu:")
+        print("1. Check Current Weather & View Weather Forecast")
+        print("2. Check Current Weather Hourly")
+        print("3. Activities Suggestions & Weather Prediction Assistant")
+        print("4. Check Other Location")
+        print("5. Exit Program")
+
+        choice = input("Please select an option (1-5): ").strip()
+
+        if choice == '1':
+            print("You selected: Check Current Weather & View Weather Forecast")
+            # TODO: Call weather visualization function here
+        elif choice == '2':
+            print("You selected: Check Current Weather Hourly")
+            # TODO: Call hourly weather function here
+        elif choice == '3':
+            print("You selected: Activities Suggestions & Weather Prediction Assistant")
+            # TODO: Call chatbot assistant function here
+        elif choice == '4':
+            print("You selected: Check Other Location")
+            # TODO: Allow user to change location here
+        elif choice == '5':
+            print("Exiting program. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please select a valid option (1-5).")
+
+        print()  # Print empty line for readability
+
+if __name__ == "__main__":
+    main()
+
+AI : def main():
+    print("Welcome to the Weather Dashboard!\n")
+
+    # Get user's name without validation
+    name = input("Please enter your name: ").strip()
+
+    # Get user's location without validation
+    location = input("Please enter your location (city name): ").strip()
+
+    print(f"\nHello, {name}! Your location is set to: {location}\n")
+
+    while True:
+        print("\033[94m" + "=" * 30 + "\033[0m")
+        print("\033[94m" + f"{'Weather Wise':^30}" + "\033[0m")
+        print("\033[94m" + "=" * 30 + "\033[0m")
+        print("Main Menu:")
+        print("1. Check Current Weather & View Weather Forecast")
+        print("2. Check Current Weather Hourly")
+        print("3. Activities Suggestions & Weather Prediction Assistant")
+        print("4. Check Other Location")
+        print("5. Exit Program")
+
+        choice = input("Please select an option (1-5): ").strip()
+
+        if choice == '1':
+            print("You selected: Check Current Weather & View Weather Forecast")
+            # TODO: Call weather visualization function here
+        elif choice == '2':
+            print("You selected: Check Current Weather Hourly")
+            # TODO: Call hourly weather function here
+        elif choice == '3':
+            print("You selected: Activities Suggestions & Weather Prediction Assistant")
+            # TODO: Call chatbot assistant function here
+        elif choice == '4':
+            print("You selected: Check Other Location")
+            # TODO: Allow user to change location here
+        elif choice == '5':
+            print("Exiting program. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please select a valid option (1-5).")
+
+        print()  # Print empty line for readability
+
+if __name__ == "__main__":
+    main()
+
+DATE - 10/05/2025
+****EXPLANATIONS ABOUT PARSING GET_WEATHER_DATA FUNCTION****
+
+Me : hi meta, after I did some more experimentation, I have decided to use wttr.in in making this program. And now I am making the get_weather_data() function, I get input like this: 
+def get_weather_data(location):
+    try:
+        url = f"https://wttr.in/{location}"  # You can add ?format=3 for one-line summary
+        response = requests.get(url)
+        response.raise_for_status()
+        return response.text  # Return the ASCII weather text
+    except requests.exceptions.RequestException as e:
+        return f"❌ Error fetching weather data: {e}"
+
+From my analysis of the code above, there is only 1 error handling, is that correct or is there another error handling that can be embedded?
+
+AI : The code you've written already includes robust error handling for requests-related exceptions. The requests.exceptions.RequestException is a base class for all exceptions that can occur while making a request, including:
+
+    requests.exceptions.HTTPError: raised when the server returns an HTTP error code (4xx or 5xx)
+    requests.exceptions.ConnectionError: raised when there's a network problem (e.g., DNS resolution, refused connection)
+    requests.exceptions.Timeout: raised when the request times out
+    requests.exceptions.TooManyRedirects: raised when the request exceeds the configured number of maximum redirections
+
+Me : i Got it, after i revised I've this code, please make it more powerfull : 
+def get_weather_data(location):
+    try:
+        url = f"https://wttr.in/{location}"
+        response = requests.get(url, timeout=10)  # 10-second timeout for safety
+        response.raise_for_status()  # Raises HTTPError for bad status codes
+
+        # Check if response body is empty
+        if not response.text.strip():
+            return "⚠️ The weather service returned an empty response. Please try again later."
+
+        return response.text  # Return ASCII-style forecast
+    
+    except requests.exceptions.HTTPError as e:
+        return f"❌ HTTP Error: {e} — Server returned an error code."
+    except requests.exceptions.ConnectionError as e:
+        return f"❌ Connection Error: {e} — Please check your internet connection."
+    except requests.exceptions.Timeout as e:
+        return f"❌ Timeout Error: {e} — The request took too long to complete."
+    except requests.exceptions.TooManyRedirects as e:
+        return f"❌ Redirect Error: {e} — Too many redirects from the server."
+    except requests.exceptions.RequestException as e:
+        return f"❌ Unknown Error: {e} — Something unexpected happened."
+AI : Your code is already quite robust and handles various potential exceptions that can occur during the request. However, I'll suggest a few minor improvements to make it even more powerful. 
+	- Removed redundant error messages: In the except blocks for specific exceptions like ConnectionError, Timeout, and 
+	  TooManyRedirects, I've removed the {e} 
+    	- Kept the generic RequestException block: This ensures that any unexpected request-related errors are caught and 
+	  handled, providing a fallback error message.
+
+
+ME: I got this code from the professor. A Weather Data Functions. Can you tell me what's the use of this function? def get_weather_data(location, forecast_days=5): """ Retrieve weather data for a specified location. Args: location (str): City or location name forecast_days (int): Number of days to forecast (1-5) Returns: dict: Weather data including current conditions and forecast """ pass
+
+AI: This function, get_weather_data, is designed to fetch weather information for a given location. It takes two parameters:
+1.	location: The city or location name for which you want to retrieve the weather data.
+2.	forecast_days: The number of days you want to forecast the weather for, with a default of 5 days if not specified.
+The function is expected to return a dictionary containing the current weather conditions and the forecast for the specified number of days. However, the actual implementation is missing, as indicated by the pass statement.
+To use this function, you'd call it with a location and optionally specify the number of forecast days, like this:
+weather_info = get_weather_data("Sydney", forecast_days=3)
+
+ME: 2.	Me: Hey, can you please make a function get_weather_data with this code included? try: # Update this line to fetch the main display from wttr.in response = requests.get('https://wttr.in/') response.raise_for_status() # This will raise an error for invalid status codes print(response.text) # Print the weather info from the main display except requests.exceptions.HTTPError as errh: print(f'HTTP Error: {errh}') except requests.exceptions.ConnectionError as errc: print(f'Connection Error: {errc}') except requests.exceptions.Timeout as errt: print(f'Timeout Error: {errt}') except requests.exceptions.RequestException as err: print(f'Error: {err}')
+
+AI: Here's the code wrapped in a get_weather_data function:
+import requests
+def get_weather_data(location=None):
+    try:
+        if location:
+            url = f'https://wttr.in/{location}'
+        else:
+            url = 'https://wttr.in/'
+        response = requests.get(url)
+        response.raise_for_status()
+        print(response.text)
+    except requests.exceptions.HTTPError as errh:
+        print(f'HTTP Error: {errh}')
+    except requests.exceptions.ConnectionError as errc:
+        print(f'Connection Error: {errc}')
+    except requests.exceptions.Timeout as errt:
+        print(f'Timeout Error: {errt}')
+    except requests.exceptions.RequestException as err:
+        print(f'Error: {err}')
+
+# Get weather data for a specific location
+get_weather_data("Sydney")
+
+# Get default weather data
+get_weather_data()
+In this code:
+•	If you pass a location to the get_weather_data function, it will fetch the weather data for that location.
+•	If you don't pass a location, it will fetch the default weather data from wttr.in.
+
+
+ME: Please make it default without the location
+AI: 
+Here's the code with the default weather data from wttr.in:
+Python
+import requests
+
+def get_weather_data():
+    try:
+        url = 'https://wttr.in/'
+        response = requests.get(url)
+        response.raise_for_status()
+        print(response.text)
+    except requests.exceptions.HTTPError as errh:
+        print(f'HTTP Error: {errh}')
+    except requests.exceptions.ConnectionError as errc:
+        print(f'Connection Error: {errc}')
+    except requests.exceptions.Timeout as errt:
+        print(f'Timeout Error: {errt}')
+    except requests.exceptions.RequestException as err:
+        print(f'Error: {err}')
+
+get_weather_data()
+
+
+ME: please guide me, how to put a dynamic location based on what the users input to the def get_weather_data () function?
+
+ To make the location dynamic based on user input, you can modify the get_weather_data() function to accept a location parameter and then ask for user input before calling the function. Here's how you can do it:
+def get_weather_data(location):
+    try:
+        url = f'https://wttr.in/{location}'
+        response = requests.get(url)
+        response.raise_for_status()
+        print(response.text)
+    except requests.exceptions.HTTPError as errh:
+        print(f'HTTP Error: {errh}')
+    except requests.exceptions.ConnectionError as errc:
+        print(f'Connection Error: {errc}')
+    except requests.exceptions.Timeout as errt:
+        print(f'Timeout Error: {errt}')
+    except requests.exceptions.RequestException as err:
+        print(f'Error: {err}')
+
+if choice == "1":
+    location = input("Enter the location (city name): ")
+    get_weather_data(location)
+In this code:
+•	The get_weather_data() function now takes a location parameter.
+•	Before calling the function, we ask the user to input the location using the input() function.
+•	We then pass the user's input to the get_weather_data() function.
+This way, the weather data will be fetched for the location specified by the user.
+
+
+DATE - 18/05/2025
+Me: I want to add emoji for weather desc display, and I got the code below. Can you add more data parsing for the weather?
+	def get_emoji(weather_desc):
+    """
+    Return an emoji corresponding to the weather description.
+    """
+    desc = weather_desc.lower()
+
+    if "sun" in desc or "clear" in desc:
+        return "☀️"  # Sunny/Clear
+    elif "cloud" in desc:
+        return "☁️"  # Cloudy
+    elif "rain" in desc or "drizzle" in desc:
+        return "🌧️"  # Rain
+    elif "thunder" in desc or "storm" in desc:
+        return "⛈️"  # Thunderstorm
+    elif "snow" in desc or "sleet" in desc:
+        return "❄️"  # Snow
+    elif "fog" in desc or "mist" in desc or "haze" in desc:
+        return "🌫️"  # Fog/Mist
+    elif "wind" in desc:
+        return "🌬️"  # Windy
+    else:
+        return "🌡️"  # Default: thermometer / weather
+
+
+AI: Here's the updated code with more specific weather descriptions and corresponding emojis:
+# Define specific keywords for each weather condition #list_dictionary
+    rain_keywords = ['rain', 'drizzle', 'shower', 'thundery outbreaks', 'downpour', 'wet']
+    snow_keywords = ['snow', 'blizzard', 'sleet', 'ice', 'hail', 'flurry']
+    cloud_keywords = ['cloud', 'overcast', 'mist', 'fog', 'haze', 'partly cloudy', 'scattered clouds']
+    fog_keywords = ['mist', 'fog', 'haze']
+    sun_keywords = ['sunny', 'clear', 'fair', 'hot', 'bright', 'clear skies', 'clear weather']
+    wind_keywords = ['wind', 'gale', 'storm', 'breeze', 'gust']
+
+ # Rain conditions
+    if any(word in weather_lower for word in rain_keywords):
+        if 'thunder' in weather_lower or 'storm' in weather_lower or 'thundery outbreaks' in weather_lower:
+            return '⛈️'  # Thunderstorm
+        elif 'light' in weather_lower or 'patchy' in weather_lower:
+            return '🌦️'  # Sun behind rain cloud
+        else:
+            return '🌧️'  # Rain cloud
+
+    # Snow conditions
+    elif any(word in weather_lower for word in snow_keywords):
+        if 'light' in weather_lower or 'patchy' in weather_lower:
+            return '🌨️'  # Snow cloud
+        else:
+            return '❄️'  # Snowflake
+
+    # Cloud conditions
+    elif any(word in weather_lower for word in cloud_keywords):
+        if 'fog' in weather_lower or 'mist' in weather_lower:
+            return '🌫️'  # Fog
+        elif 'overcast' in weather_lower:
+            return '☁️'  # Cloudy weather
+        elif 'partly' in weather_lower or 'scattered' in weather_lower:
+            return '⛅'  # Sun behind cloud
+        else:
+            return '☁️'  # Cloud
+
+    # Clear conditions (sunny/fair weather)
+    elif any(word in weather_lower for word in sun_keywords):
+        return '☀️'  # Sun
+
+    # Wind conditions
+    elif any(word in weather_lower for word in wind_keywords):
+        return '💨'  # Wind blowing
+
+    # Fog conditions
+    elif any(word in weather_lower for word in fog_keywords):
+        return '🌫️'  # Wind blowing
+
+    # Default (unknown or undefined weather)
+    else:
+        return '🌡️'  # Thermometer (default)
+
+
